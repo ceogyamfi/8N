@@ -4,31 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/QuestMaster/assets/css/style.css" rel="stylesheet">
-    <script href="/QuestMaster/assets/script/script.js"></script>
     <title>Quest-Master</title>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <nav class="menu">
-                <ul class="navBar">
+    <!--Header Navigation Holder-->
+    <header>
+        <div class="navigation">
+            <button class="hamburger" onclick="show()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </button>
+            
+            <nav class="hamburgerNav">
+                <ul class="contentHolder">
                     <li><a href="">Login</a></li>
-                    <li><a href="">Character Profile</a></li>
-                    <!-- <li><a href="">Last Week</a></li>
-                    <li><a href="">Current Week</a></li>
-                    <li><a href="">Next Week</a></li> -->
+                    <li><a class="link1" href="">Profile</a></li>
+                    <li><a class="link1" href="">Last Week</a></li>
+                    <li><a class="link1" href="">Current Week</a></li>
+                    <li><a class="link1" href="">Next Week</a></li>
                 </ul>
-            </nav>
-
-            <div class="content">
-                <div class="section-1">
-                    <h1>Test</h1>
-                    <p>Test</p>
-                </div>
+            </nav> 
+        </div> 
+    </header>
+    
+    <div class="container">
+        <div class="box"> 
+            <!-- <a href="" class="navigation-link-back">Last Week</a>
+                <a href="" class="navigation-link-forward">Next Week</a> -->
             </div>
         </div>
-    </div>
-    
-    
-</body>
-</html>
+        
+      <div class="calendar-container">
+        <div class="calendar">
+            <div class="day">
+                <!--Monday Task-->
+              <h2>Monday</h2>
+              <ul class="task-list" id="monday-tasks"> 
+                <li><input type="checkbox" /> Task 1</li>
+                <li><input type="checkbox" /> Task 2</li>
+              </ul>
+              <button class="add-task-button" data-day="monday">Add Task</button>
+            </div>
+            <!--Tuesday Task-->
+            <div class="day">
+                <h2>Tuesday</h2>
+                <ul class="task-list" id="tuesday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="tuesday">Add Task</button>
+              </div>
+            <!--Wednesday-->
+            <div class="day">
+                <h2>Wednesday</h2>
+                <ul class="task-list" id="wednesday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="wednesday">Add Task</button>
+              </div>
+               <!--Thursday-->
+            <div class="day">
+                <h2>Thursday</h2>
+                <ul class="task-list" id="thursday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="thursday">Add Task</button>
+              </div>
+               <!--Friday-->
+            <div class="day">
+                <h2>Friday</h2>
+                <ul class="task-list" id="friday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="friday">Add Task</button>
+              </div>
+               <!--Saturday-->
+            <div class="day">
+                <h2>Saturday</h2>
+                <ul class="task-list" id="saturday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="saturday">Add Task</button>
+              </div>
+               <!--Sunday-->
+            <div class="day">
+                <h2>Sunday</h2>
+                <ul class="task-list" id="sunday-tasks"> 
+                  <li><input type="checkbox" /> Task 1</li>
+                  <li><input type="checkbox" /> Task 2</li>
+                </ul>
+                <button class="add-task-button" data-day="sunday">Add Task</button>
+              </div>
+          </div>
+          <div class="modal" id="task-modal">
+            <div class="modal-content">
+              <span class="close" id="close-modal">&times;</span>
+              <h3>Add Task</h3>
+              <input type="text" id="task-input" placeholder="Enter a task..." />
+              <button id="add-task">Add</button>
+            </div>
+          </div>
+      </div>
+        
+        
+        <script src="/QuestMaster/assets/script/script.js"></script>
+    </body>
+    </html> 

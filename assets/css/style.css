@@ -1,32 +1,265 @@
-* {
-    padding: 0;
+*{
     margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+    padding: 0;
     list-style: none;
-    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+    Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
 }
 
+/* CSS to Customize My Hamburger Dropdown Menu */
+a,button{
+    cursor: pointer;
+}
+
+.hamburgerNav {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 250px;
+}
+
+.navigation{
+    position: fixed;
+    right: -500px;
+    width: 350px;
+    height: 100%;
+    background-color: #000;
+    transition: .5s;
+    color: #fff;
+    z-index: 999;
+}
+
+.navigation ul li{
+    color: #fff;
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid #252525;
+}
+
+.navigation a {
+    color: #fff;
+}
+
+.hamburger, .bar{
+    position: fixed;
+    
+}
+
+.hamburger{
+    display: block;
+    top: 5%;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+    
+}
+
+.bar{
+    top: 3px;
+    background: #000;
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+#bar2{
+    top: 11px;
+}
+
+#bar3{
+    top: 19px;
+}
+
+.navigation.active{
+    right: 0;
+}
+
+.hamburger.open #bar1{
+    background-color: #fff;
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #bar2{
+    background-color: transparent;
+}
+
+.hamburger.open #bar3{
+    background-color: #fff;
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+
+/* Css to customize container and box div */
 div.container {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     position: relative;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
 }
 
+/*Customizer for the box div class.*/
 .container .box {
-    height: 25vh;
-    width: 98%;
-    margin-bottom: 38%;
-    background-color: rgb(197, 198, 208, 0.2);
+    height: 40vh;
+    width: 100%;
+    margin-bottom: 45%;
+    background-color: rgb(255, 255, 255, 0.1);
     z-index: 10;
-    border: 2px solid rgb(255, 255, 255, 0.50);
-    border-radius: 20px;
+    border: 2px solid rgba(74, 73, 73, 0.2);
+    border-radius: 10px;
     display: flex;
-    backdrop-filter: blur(30px);
-    box-shadow: -15px 17px 17px rgb(10, 10, 10, 0.15);
-    justify-content: center;
+    /* backdrop-filter: blur(30px); */
+    box-shadow: -3px 4px 5px rgb(10, 10, 10, 0.15);
 }
+
+/* 
+.navigation-link-back {
+    position: absolute;
+    left: 5%;
+    margin-top: 13%;
+    color: #fff;
+    background-color: grey;
+    border-radius: 0.625rem;
+    border: 1px solid #888;
+    width: 7rem;
+    height: 2rem;
+    text-align: center;
+  }
+  
+  .navigation-link-forward {
+    position: absolute;
+    right: 5%;
+    margin-top: 13%;
+    color: #fff;
+    background-color: grey;
+    border-radius: 0.625rem;
+    border: 1px solid #888;
+    width: 7rem;
+    height: 2rem;
+    text-align: center;
+  } */
+
+  .calendar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Style individual day containers */
+  .day {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 10px;
+    height: 500px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* width: calc(100% / 7); */
+  }
+  
+  /* Style the task list within each day */
+  .task-list {
+    max-height: 150px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  /* Style the "Add Task" button */
+  .add-task-button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the task modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Style the task input and "Add" button in the modal */
+  #task-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #add-task {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the close button in the modal */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;  
+    margin: 0 auto;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 100px;
+  }
+  
+
+  .day {
+    flex-basis: 14.2857%; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
